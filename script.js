@@ -11,4 +11,15 @@ let questions  = [
 
 
 // https://jsonformatter.curiousconcept.com/
-// ggf. noch weitere JSON-Elemente überlegen
+// ggf. noch weitere JSON-Elemente überlegen  JSON Validator  - Kapitel 06
+
+
+let currentquestion = 0;
+
+function init() {
+      document.getElementById('questionSum').inner.HTML = questions.length;
+}
+
+function showquestion() {
+    let question = questions[currentquestion];
+}
