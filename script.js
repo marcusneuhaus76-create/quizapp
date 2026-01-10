@@ -70,21 +70,32 @@ function init() {
 
 function showquestion() {
     let question = questions[currentquestion];
+
     document.getElementById('questiontext').innerHTML = question['question'];
-
-    document.getElementById('answer_1').innerHTML =  question['answer_1'];
-
-    let answer2 = question['answer_2'];
-    document.getElementById('answer_2').innerHTML = answer2;
-
-    let answer3 = question['answer_3'];
-    document.getElementById('answer_3').innerHTML = answer3;
-
-    let answer4 = question['answer_4'];
-    document.getElementById('answer_4').innerHTML = answer4;
+    document.getElementById('answer_1').innerHTML = question['answer_1'];
+    document.getElementById('answer_2').innerHTML = question['answer_2'];
+    document.getElementById('answer_3').innerHTML = question['answer_3'];
+    document.getElementById('answer_4').innerHTML = question['answer_4'];
 }
 /* 
-08 - Answer Button definieren kommt als nächstes    */
+08 - Answer Button definieren kommt als nächstes   
+
+09 - Funktion "Answer" fertig stellen und jede Zeile kommentieren
+*/
+
+
+
+function answer(selection) {
+    let question = questions[currentquestion];
+    console.log('selected answer is    ', selection);
+    console.log('Current answer is    ', question);
+    let selectedQuestionNumber = selection.slice(-1); // answer_1  -> 1
+    console.log('selectedQuestionNumber ', selectedQuestionNumber);
+    console.log('Current answer is    ', question['right_answer']);
+}
+
+
+/* My Proposal  to handle answer selection 
 
 function answer(selection) {
     if selection == questions[currentquestion]['right_answer'] {
@@ -92,4 +103,4 @@ function answer(selection) {
     } else {
         console.log('Falsche Antwort');
     }
-}
+} */
