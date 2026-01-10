@@ -84,4 +84,12 @@ function showquestion() {
     document.getElementById('answer_4').innerHTML = answer4;
 }
 /* 
-08 - Answer Button definieren kommt als nächstes*/
+08 - Answer Button definieren kommt als nächstes    */
+
+function answer(selection) {
+    if selection == questions[currentquestion]['right_answer'] {
+        console.log('Richtige Antwort');
+    } else {
+        console.log('Falsche Antwort');
+    }
+}
