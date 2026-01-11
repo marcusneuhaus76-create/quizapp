@@ -61,7 +61,7 @@ let questions  = [
 // ggf. noch weitere JSON-Elemente überlegen  JSON Validator  - Kapitel 06
 
 
-let currentquestion = 0;
+let currentQuestion = 0;
 
 function init() {
       document.getElementById('questionSum').innerHTML = questions.length;
@@ -69,7 +69,7 @@ function init() {
 }
 
 function showquestion() {
-    let question = questions[currentquestion];
+    let question = questions[currentQuestion]; /* Das 1. Position des Arrays (Stelle '0') wid in der Variablen 'quetion' gespeichert   */
 
     document.getElementById('questiontext').innerHTML = question['question'];
     document.getElementById('answer_1').innerHTML = question['answer_1'];
@@ -85,13 +85,22 @@ function showquestion() {
 
 
 
-function answer(selection) {
-    let question = questions[currentquestion];
-    console.log('selected answer is    ', selection);
-    console.log('Current answer is    ', question);
-    let selectedQuestionNumber = selection.slice(-1); // answer_1  -> 1
-    console.log('selectedQuestionNumber ', selectedQuestionNumber);
-    console.log('Current answer is    ', question['right_answer']);
+function answer(selection){                    /* 'selection' ist der übergebene Parameter, wenn der User eine Antwort anklickt  */
+    let question = questions[currentQuestion];  /* Das 1. Position des Arrays (Stelle '0') wid in der Variablen 'quetion' gespeichert   */
+    console.log('Selected answer is    ', selection);  // Gibt den Inhalt der Variable 'selection' in der Konsole aus. Inhaltvon 'selection' ist der angeklickte Button (z.B. 'answer_1')
+    console.log('Current answer is    ', question); // Gibt den Inhalt der Variable 'question' in der Konsole aus. Inhalt von 'question' ist das aktuelle Fragen-Objekt aus dem Array 'questions'
+    let selectedQuestionNumber = selection.slice(-1); // Variable speichert die letzte Zeichen des Strings 'selection' in der Variable 'selectedQuestionNumber'. Z.B. aus 'answer_1' wird '1'
+    console.log('selectedQuestionNumber ', selectedQuestionNumber); // Variable 'selectedQuestionNumber' wird in der Konsole ausgegeben
+    console.log('Current answer is    ', question['right_answer']); // Gibt die richtige Antwort der aktuellen Frage in der Konsole aus. Z.B. '3' für die erste Frage
+
+
+    if (selectedQuestionNumber == question['right_answer']) {  /* Vergleicht die ausgewählte Antwort mit der richtigen Antwort */
+        console.log('Richtige Antwort');  /* Wenn die Antworten übereinstimmen, wird 'Richtige Antwort' in der Konsole ausgegeben */
+        document.getElementById(selection).parentNode.classList.add('bg-success'); /* Der angeklickte Button wird grün hinterlegt */       
+    } else {
+        console.log('Falsche Antwort');
+        document.getElementById(selection).parentNode.classList.add('bg-danger'); /* Der angeklickte Button wird rot hinterlegt */
+    }
 }
 
 
