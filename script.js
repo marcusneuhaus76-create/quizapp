@@ -105,6 +105,7 @@ function answer(selection){                    /* 'selection' ist der übergeben
         document.getElementById(selection).parentNode.classList.add('bg-danger'); 
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success'); /* Der angeklickte Button wird rot hinterlegt */
     }
+    document.getElementById('next-button').disabled = false; /* Der 'Nächste Frage' Button wird aktivier */
 }
 
 
