@@ -93,13 +93,17 @@ function answer(selection){                    /* 'selection' ist der übergeben
     console.log('selectedQuestionNumber ', selectedQuestionNumber); // Variable 'selectedQuestionNumber' wird in der Konsole ausgegeben
     console.log('Current answer is    ', question['right_answer']); // Gibt die richtige Antwort der aktuellen Frage in der Konsole aus. Z.B. '3' für die erste Frage
 
+    let idOfRightAnswer = `answer_${question['right_answer']}`; /* Die ID der richtigen Antwort wird in der Variable 'idOfRightAnswer' gespeichert. Z.B. 'answer_3' für die erste Frage */
 
-    if (selectedQuestionNumber == question['right_answer']) {  /* Vergleicht die ausgewählte Antwort mit der richtigen Antwort */
-        console.log('Richtige Antwort');  /* Wenn die Antworten übereinstimmen, wird 'Richtige Antwort' in der Konsole ausgegeben */
+    /* let idOfRightAnswer = `answer_3`;  Die ID der richtigen Antwort wird in der Variable 'idOfRightAnswer' gespeichert. Z.B. 'answer_3' für die erste Frage */
+
+    if(selectedQuestionNumber == question['right_answer']) {  /* Vergleicht die ausgewählte Antwort mit der richtigen Antwort */
+        console.log('Richtige Antwort!!');  /* Wenn die Antworten übereinstimmen, wird 'Richtige Antwort' in der Konsole ausgegeben */
         document.getElementById(selection).parentNode.classList.add('bg-success'); /* Der angeklickte Button wird grün hinterlegt */       
     } else {
         console.log('Falsche Antwort');
-        document.getElementById(selection).parentNode.classList.add('bg-danger'); /* Der angeklickte Button wird rot hinterlegt */
+        document.getElementById(selection).parentNode.classList.add('bg-danger'); 
+        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success'); /* Der angeklickte Button wird rot hinterlegt */
     }
 }
 
@@ -113,3 +117,6 @@ function answer(selection) {
         console.log('Falsche Antwort');
     }
 } */
+
+
+// 11 - Was passiert bei einer falschen Antwort
