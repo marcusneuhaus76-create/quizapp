@@ -34,8 +34,8 @@
                         </div>
 
                         <div class="card quiz-answer-card mb-2" onclick="answer('answer_2')">
-                        <div class="card-body" id="answer_2">
-                            Antwort
+                            <div class="card-body" id="answer_2">
+                                Antwort
                             </div>
                         </div>
 
@@ -49,21 +49,21 @@
                             <div class="card-body" id="answer_4">
                                 Antwort
                             </div>
+                        </div>
 
                         <div class="question-footer">
                             <span>  
-                                <b>1</b> von <b id="questionSum"></b> Fragen
+                                <b id="currentQuestionNumber"></b> von <b id="questionSum"></b> Fragen
                             </span>    
                                 
-                                <button id="next-button">Nächste Frage</button>
+                            <button onclick="nextQuestion()" class="btn btn-primary" id="next-button" disabled>Nächste Frage</button>
                         </div>
-                        
-                        <!-- <p class= "card-text">Some quick example text to build on the card title and make up the bulk of the card's content. </p> -->
-                        <a href="#" class=" btn btn-primary">Go somewhere</a>
+                                                
                     </div>
                 </div>
             
         </div>    
+
     </body>
 </html>
 

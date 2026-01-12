@@ -66,10 +66,11 @@ let currentQuestion = 0;
 function init() {
       document.getElementById('questionSum').innerHTML = questions.length;
       showquestion();
+      document.getElementById('currentQuestionNumber').innerHTML = currentQuestion + 1;
 }
 
 function showquestion() {
-    let question = questions[currentQuestion]; /* Das 1. Position des Arrays (Stelle '0') wid in der Variablen 'quetion' gespeichert   */
+    let question = questions[currentQuestion]; /* Das 1. Position des Arrays (Stelle '0') wid in der Variablen 'question' gespeichert   */
 
     document.getElementById('questiontext').innerHTML = question['question'];
     document.getElementById('answer_1').innerHTML = question['answer_1'];
@@ -108,6 +109,20 @@ function answer(selection){                    /* 'selection' ist der übergeben
     document.getElementById('next-button').disabled = false; /* Der 'Nächste Frage' Button wird aktivier */
 }
 
+function nextQuestion() {
+    currentQuestion++;
+    showquestion();
+
+    document.getElementById('next-button').disabled = true;
+    selection = null;
+
+    document.getElementById('answer_1').parentNode.classList.remove('bg-success','bg-danger');
+    document.getElementById('answer_2').parentNode.classList.remove('bg-success','bg-danger');
+    document.getElementById('answer_3').parentNode.classList.remove('bg-success','bg-danger');
+    document.getElementById('answer_4').parentNode.classList.remove('bg-success','bg-danger');
+
+    document.getElementById('currentQuestionNumber').innerHTML = currentQuestion + 1;
+}
 
 /* My Proposal  to handle answer selection 
 
