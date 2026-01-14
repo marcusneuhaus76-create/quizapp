@@ -70,13 +70,19 @@ function init() {
 }
 
 function showquestion() {
-    let question = questions[currentQuestion]; /* Das 1. Position des Arrays (Stelle '0') wid in der Variablen 'question' gespeichert   */
+
+    if (currentQuestion >= questions.length) {
+
+    } else {
+
+       let question = questions[currentQuestion]; /* Das 1. Position des Arrays (Stelle '0') wid in der Variablen 'question' gespeichert   */
 
     document.getElementById('questiontext').innerHTML = question['question'];
     document.getElementById('answer_1').innerHTML = question['answer_1'];
     document.getElementById('answer_2').innerHTML = question['answer_2'];
     document.getElementById('answer_3').innerHTML = question['answer_3'];
     document.getElementById('answer_4').innerHTML = question['answer_4'];
+    }
 }
 /* 
 08 - Answer Button definieren kommt als nächstes   
