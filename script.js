@@ -70,18 +70,21 @@ function init() {
 }
 
 function showquestion() {
-
+        //TODO: Show End Screen
     if (currentQuestion >= questions.length) {
+        document.getElementById('endScreen').style = '';
+        document.getElementById('questionBody').style = 'display: none;';
 
     } else {
 
-       let question = questions[currentQuestion]; /* Das 1. Position des Arrays (Stelle '0') wid in der Variablen 'question' gespeichert   */
+        let question = questions[currentQuestion]; /* Das 1. Position des Arrays (Stelle '0') wid in der Variablen 'question' gespeichert   */
 
-    document.getElementById('questiontext').innerHTML = question['question'];
-    document.getElementById('answer_1').innerHTML = question['answer_1'];
-    document.getElementById('answer_2').innerHTML = question['answer_2'];
-    document.getElementById('answer_3').innerHTML = question['answer_3'];
-    document.getElementById('answer_4').innerHTML = question['answer_4'];
+        document.getElementById('question-number').innerHTML = currentQuestion + 1;
+        document.getElementById('questiontext').innerHTML = question['question'];
+        document.getElementById('answer_1').innerHTML = question['answer_1'];
+        document.getElementById('answer_2').innerHTML = question['answer_2'];
+        document.getElementById('answer_3').innerHTML = question['answer_3'];
+        document.getElementById('answer_4').innerHTML = question['answer_4'];
     }
 }
 /* 
@@ -92,7 +95,7 @@ function showquestion() {
 
 
 
-function answer(selection){                    /* 'selection' ist der übergebene Parameter, wenn der User eine Antwort anklickt  */
+function answer(selection) {                    /* 'selection' ist der übergebene Parameter, wenn der User eine Antwort anklickt  */
     let question = questions[currentQuestion];  /* Das 1. Position des Arrays (Stelle '0') wid in der Variablen 'quetion' gespeichert   */
     console.log('Selected answer is    ', selection);  // Gibt den Inhalt der Variable 'selection' in der Konsole aus. Inhaltvon 'selection' ist der angeklickte Button (z.B. 'answer_1')
     console.log('Current answer is    ', question); // Gibt den Inhalt der Variable 'question' in der Konsole aus. Inhalt von 'question' ist das aktuelle Fragen-Objekt aus dem Array 'questions'
